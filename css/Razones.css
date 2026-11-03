@@ -1,0 +1,1251 @@
+
+/* ==========================================
+   ETERNELLE - RAZONES POR LAS QUE TE AMO
+   Diseño romántico con carta paginada
+========================================== */
+
+/* VARIABLES */
+
+:root {
+  --rojo: #e82946;
+  --rojo-claro: #ff6378;
+  --rojo-oscuro: #a80e2b;
+
+  --fondo: #13070d;
+  --fondo-nav: #12090d;
+
+  --texto: #ffffff;
+  --suave: #e1cbd1;
+
+  --papel: #f8dfc5;
+  --papel-claro: #ffecd5;
+  --papel-oscuro: #e5b990;
+
+  --tinta: #35131b;
+}
+
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  font-family: 'DM Sans', sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN
+========================================== */
+
+.cabecera {
+  height: 7%;
+  min-height: 43px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4%;
+
+  background: var(--fondo-nav);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+
+  position: relative;
+  z-index: 20;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: clamp(17px, 1.5vw, 24px);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.logo svg {
+  width: 31px;
+  height: 31px;
+
+  fill: none;
+  stroke: var(--rojo);
+  stroke-width: 2;
+}
+
+.rojo {
+  color: var(--rojo);
+}
+
+.navegacion {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.4vw, 38px);
+}
+
+.navegacion a {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  white-space: nowrap;
+
+  font-size: clamp(10px, .85vw, 14px);
+  font-weight: 600;
+
+  border-bottom: 2px solid transparent;
+
+  transition:
+    color .2s ease,
+    border-color .2s ease;
+}
+
+.navegacion a:hover {
+  color: var(--rojo-claro);
+}
+
+.navegacion a.activo {
+  border-bottom-color: var(--rojo);
+}
+
+.corazon-cabecera {
+  width: 27px;
+  height: 27px;
+
+  fill: none;
+  stroke: var(--rojo);
+  stroke-width: 2;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   FONDO PRINCIPAL
+========================================== */
+
+main {
+  position: relative;
+
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      ellipse at 48% 42%,
+      rgba(120, 12, 37, .38),
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse at 90% 85%,
+      rgba(125, 10, 38, .24),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 5% 75%,
+      rgba(100, 10, 30, .22),
+      transparent 48%
+    ),
+    #16070d;
+}
+
+/* ==========================================
+   CORAZONES DEL FONDO
+========================================== */
+
+.corazon-fondo {
+  position: absolute;
+
+  color: rgba(230, 25, 55, .15);
+  filter: blur(3px);
+
+  pointer-events: none;
+  user-select: none;
+
+  z-index: -1;
+}
+
+.corazon-1 {
+  top: 7%;
+  left: 2%;
+
+  font-size: 105px;
+  transform: rotate(-15deg);
+}
+
+.corazon-2 {
+  top: 12%;
+  right: 4%;
+
+  font-size: 95px;
+  transform: rotate(15deg);
+}
+
+.corazon-3 {
+  bottom: 10%;
+  left: 3%;
+
+  font-size: 100px;
+  transform: rotate(-12deg);
+}
+
+.corazon-4 {
+  bottom: 7%;
+  right: 3%;
+
+  font-size: 130px;
+  transform: rotate(12deg);
+}
+
+/* ==========================================
+   ESCENARIO PRINCIPAL
+========================================== */
+
+.escenario {
+  position: relative;
+  z-index: 2;
+
+  width: min(1450px, 94%);
+  height: 87%;
+  min-height: 0;
+
+  display: grid;
+  grid-template-columns: 36% minmax(0, 64%);
+  align-items: center;
+}
+
+/* ==========================================
+   ZONA DE LA FOTOGRAFÍA
+========================================== */
+
+.zona-foto {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
+}
+
+/* ==========================================
+   FOTOGRAFÍA POLAROID
+========================================== */
+
+.polaroid {
+  position: relative;
+
+  width: 88%;
+  height: 79%;
+
+  padding: 12px 12px 50px;
+
+  background: #fff3e9;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 6px;
+
+  box-shadow:
+    0 16px 38px rgba(0,0,0,.5),
+    0 0 22px rgba(255,160,140,.12);
+
+  transform: rotate(-6deg);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(-3deg) scale(1.015);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.55),
+    0 0 30px rgba(255,130,150,.2);
+}
+
+/* IMAGEN */
+
+.imagen-pareja {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 3px;
+}
+
+/* CINTA ADHESIVA */
+
+.cinta {
+  position: absolute;
+
+  width: 34%;
+  height: 34px;
+
+  top: -15px;
+  left: 33%;
+
+  background: rgba(255,145,160,.72);
+
+  transform: rotate(-5deg);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    97% 100%,
+    3% 100%
+  );
+
+  z-index: 4;
+}
+
+/* CORAZÓN DE LA POLAROID */
+
+.corazon-polaroid {
+  position: absolute;
+
+  bottom: 5px;
+  right: 23px;
+
+  font-size: 43px;
+  line-height: 1;
+
+  color: #c31835;
+}
+
+/* ==========================================
+   ROSA DECORATIVA
+========================================== */
+
+.rosa {
+  position: absolute;
+
+  left: -4%;
+  bottom: -2%;
+
+  font-size: clamp(65px, 8vw, 130px);
+
+  transform: rotate(-25deg);
+
+  filter: drop-shadow(
+    0 10px 10px rgba(0,0,0,.4)
+  );
+
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* ==========================================
+   SOBRE DECORATIVO
+========================================== */
+
+.sobre {
+  position: absolute;
+
+  right: -3%;
+  bottom: 2%;
+
+  width: clamp(85px, 11vw, 150px);
+  aspect-ratio: 1.55;
+
+  background: #f5d0a7;
+  border-radius: 5px;
+
+  transform: rotate(12deg);
+
+  box-shadow: 0 10px 20px rgba(0,0,0,.35);
+
+  z-index: 6;
+}
+
+.sobre-solapa {
+  position: absolute;
+  inset: 0;
+
+  background: #e8b98c;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 58%
+  );
+}
+
+.sobre > span {
+  position: absolute;
+
+  left: 50%;
+  top: 46%;
+
+  transform: translate(-50%, -50%);
+
+  color: #bb1834;
+  font-size: 31px;
+
+  z-index: 2;
+}
+
+/* ==========================================
+   CARTA PRINCIPAL
+========================================== */
+
+.carta {
+  position: relative;
+
+  width: 100%;
+  height: 96%;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(120,65,35,.025) 0px,
+      rgba(120,65,35,.025) 2px,
+      transparent 2px,
+      transparent 5px
+    ),
+    radial-gradient(
+      ellipse at center,
+      var(--papel-claro) 0%,
+      var(--papel) 75%,
+      var(--papel-oscuro) 100%
+    );
+
+  border-radius: 18px 25px 22px 17px;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.5),
+    inset 0 0 35px rgba(140,70,30,.15);
+
+  transform: rotate(.6deg);
+}
+
+/* BORDE DEL PAPEL */
+
+.carta::before {
+  content: '';
+
+  position: absolute;
+  inset: -4px;
+
+  background: #efd0ae;
+
+  clip-path: polygon(
+    0% 3%, 4% 1%, 8% 3%, 13% 0%,
+    19% 2%, 25% 1%, 31% 3%,
+    37% 0%, 44% 2%, 51% 1%,
+    58% 3%, 65% 0%, 72% 2%,
+    79% 1%, 86% 3%, 93% 1%,
+    100% 4%, 98% 12%, 100% 20%,
+    99% 29%, 100% 38%, 98% 48%,
+    100% 57%, 99% 67%, 100% 76%,
+    98% 86%, 100% 96%, 94% 99%,
+    85% 97%, 76% 100%, 67% 98%,
+    58% 100%, 49% 98%, 40% 100%,
+    31% 98%, 22% 100%, 13% 98%,
+    5% 100%, 1% 95%, 2% 86%,
+    0% 76%, 2% 65%, 0% 55%,
+    2% 44%, 0% 34%, 2% 24%,
+    0% 14%
+  );
+
+  z-index: -1;
+}
+
+/* ==========================================
+   CONTENIDO DE LA CARTA
+========================================== */
+
+.contenido-carta {
+  position: relative;
+
+  width: 87%;
+  height: 94%;
+  max-height: 94%;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: var(--tinta);
+
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ==========================================
+   TÍTULO
+========================================== */
+
+.contenido-carta h1 {
+  flex-shrink: 0;
+
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+
+  font-size: clamp(36px, 4.4vw, 72px);
+  line-height: 1.02;
+
+  text-align: center;
+
+  margin-bottom: 5px;
+}
+
+.contenido-carta h1 span {
+  display: block;
+  color: #b9082a;
+}
+
+/* ==========================================
+   DIVISOR ROMÁNTICO
+========================================== */
+
+.divisor {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  width: 72%;
+  margin: 6px auto 14px;
+}
+
+.divisor span {
+  flex: 1;
+  height: 1px;
+  background: #ae2135;
+}
+
+.divisor svg {
+  width: 20px;
+  height: 20px;
+
+  fill: none;
+  stroke: #ae2135;
+  stroke-width: 2;
+}
+
+/* ==========================================
+   CONTENEDOR DE PÁGINAS
+========================================== */
+
+.paginas-carta {
+  position: relative;
+
+  width: 100%;
+
+  flex: 1;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+/* CADA PÁGINA */
+
+.pagina {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: clamp(7px, 1.2vh, 15px);
+
+  overflow: hidden;
+}
+
+.pagina.activa {
+  display: flex;
+}
+
+.pagina[hidden] {
+  display: none !important;
+}
+
+/* ==========================================
+   TEXTO ROMÁNTICO
+========================================== */
+
+.pagina .mensaje {
+  width: 100%;
+
+  margin: 0;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(11px, 1.12vw, 16px);
+  line-height: 1.55;
+  font-weight: 500;
+
+  color: #34171c;
+
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.pagina .mensaje strong {
+  color: #a10e2b;
+  font-weight: 700;
+}
+
+.pagina .mensaje-final {
+  color: #9c0e2b;
+}
+
+/* ==========================================
+   BOTONES PARA CAMBIAR DE PÁGINA
+========================================== */
+
+.controles-carta {
+  width: 100%;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+  padding-top: 12px;
+}
+
+/* FLECHAS */
+
+.boton-pagina {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  border: 1px solid #b6203c;
+
+  background: rgba(180,25,55,.08);
+  color: #a00c2b;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition:
+    background .2s,
+    color .2s,
+    transform .2s,
+    box-shadow .2s;
+}
+
+.boton-pagina:hover:not(:disabled) {
+  background: #b6203c;
+  color: #fff;
+
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(182,32,60,.3);
+}
+
+.boton-pagina:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+/* INDICADOR DE PÁGINA */
+
+.indicador {
+  min-width: 55px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #8c3442;
+  text-align: center;
+
+  letter-spacing: .08em;
+}
+
+/* ==========================================
+   FIRMA
+========================================== */
+
+.contenido-carta .firma {
+  flex-shrink: 0;
+  align-self: flex-end;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 8px;
+
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(23px, 2.3vw, 37px);
+
+  color: #a80e2b;
+}
+
+.firma-corazon {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2em;
+}
+
+/* ==========================================
+   CORAZONES DE LA CARTA
+========================================== */
+
+.corazon-grande {
+  position: absolute;
+
+  top: -12%;
+  right: -5%;
+
+  font-size: clamp(110px, 15vw, 230px);
+  line-height: 1;
+
+  color: rgba(190,10,45,.4);
+
+  transform: rotate(-15deg);
+  z-index: -2;
+
+  pointer-events: none;
+}
+
+.corazon-carta {
+  position: absolute;
+
+  color: rgba(182,8,43,.65);
+
+  font-size: 45px;
+  pointer-events: none;
+}
+
+.corazon-a {
+  top: 29%;
+  right: 3%;
+
+  transform: rotate(20deg);
+}
+
+.corazon-b {
+  bottom: 2%;
+  right: 3%;
+
+  font-size: 65px;
+  transform: rotate(-15deg);
+}
+
+/* ==========================================
+   CINTA DECORATIVA INFERIOR
+========================================== */
+
+.cinta-inferior {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 5%;
+
+  background: linear-gradient(
+    90deg,
+    #6c0018,
+    #b5002d,
+    #720018
+  );
+
+  clip-path: polygon(
+    0 70%,
+    20% 85%,
+    40% 45%,
+    60% 60%,
+    80% 25%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  opacity: .75;
+  pointer-events: none;
+}
+
+/* ==========================================
+   PANTALLAS MEDIANAS
+========================================== */
+
+@media (max-width: 1100px) {
+
+  .escenario {
+    width: 97%;
+    grid-template-columns: 34% minmax(0, 66%);
+  }
+
+  .polaroid {
+    width: 94%;
+    height: 75%;
+    padding-bottom: 35px;
+  }
+
+  .sobre {
+    width: 105px;
+  }
+
+  .contenido-carta h1 {
+    font-size: clamp(35px, 4.5vw, 60px);
+  }
+
+  .pagina .mensaje {
+    font-size: clamp(10px, 1.15vw, 14px);
+    line-height: 1.43;
+  }
+
+  .pagina {
+    gap: 8px;
+  }
+
+  .corazon-a {
+    display: none;
+  }
+}
+
+/* ==========================================
+   PANTALLAS BAJAS
+========================================== */
+
+@media (max-height: 700px) and (min-width: 701px) {
+
+  .escenario {
+    height: 92%;
+  }
+
+  .polaroid {
+    height: 80%;
+  }
+
+  .contenido-carta h1 {
+    font-size: clamp(32px, 3.7vw, 56px);
+  }
+
+  .divisor {
+    margin: 4px auto 8px;
+  }
+
+  .pagina {
+    gap: 6px;
+  }
+
+  .pagina .mensaje {
+    font-size: clamp(10px, 1vw, 14px);
+    line-height: 1.35;
+  }
+
+  .controles-carta {
+    padding-top: 5px;
+  }
+
+  .boton-pagina {
+    width: 29px;
+    height: 29px;
+  }
+
+  .contenido-carta .firma {
+    margin-top: 4px;
+    font-size: 25px;
+  }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 700px) {
+
+  .cabecera {
+    height: 7%;
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .navegacion {
+    display: none;
+  }
+
+  .corazon-cabecera {
+    width: 24px;
+    height: 24px;
+  }
+
+  .escenario {
+    width: 94%;
+    height: 95%;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 27% minmax(0, 73%);
+  }
+
+  .zona-foto {
+    z-index: 4;
+  }
+
+  .polaroid {
+    width: min(230px, 53%);
+    height: 112%;
+
+    padding: 7px 7px 23px;
+
+    transform: rotate(-6deg);
+  }
+
+  .cinta {
+    height: 20px;
+    top: -9px;
+  }
+
+  .corazon-polaroid {
+    font-size: 23px;
+    bottom: 0;
+  }
+
+  .rosa {
+    font-size: 60px;
+    left: 12%;
+    bottom: -10%;
+  }
+
+  .sobre {
+    width: 75px;
+    right: 13%;
+    bottom: -8%;
+  }
+
+  .sobre > span {
+    font-size: 20px;
+  }
+
+  .carta {
+    width: 100%;
+    height: 97%;
+
+    transform: rotate(0);
+  }
+
+  .contenido-carta {
+    width: 87%;
+    height: 96%;
+    max-height: 96%;
+  }
+
+  .contenido-carta h1 {
+    font-size: clamp(32px, 6.5vw, 49px);
+    margin-bottom: 2px;
+  }
+
+  .divisor {
+    width: 72%;
+    margin: 3px auto 8px;
+  }
+
+  .divisor svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .pagina {
+    gap: 7px;
+  }
+
+  .pagina .mensaje {
+    font-size: clamp(10px, 2.2vw, 13px);
+    line-height: 1.36;
+  }
+
+  .controles-carta {
+    padding-top: 6px;
+    gap: 20px;
+  }
+
+  .boton-pagina {
+    width: 29px;
+    height: 29px;
+  }
+
+  .indicador {
+    font-size: 11px;
+  }
+
+  .contenido-carta .firma {
+    margin-top: 4px;
+    font-size: 23px;
+  }
+
+  .corazon-a,
+  .corazon-grande {
+    display: none;
+  }
+
+  .corazon-b {
+    font-size: 38px;
+  }
+
+  .cinta-inferior {
+    height: 4%;
+  }
+}
+
+/* ==========================================
+   CELULARES MUY PEQUEÑOS
+========================================== */
+
+@media (max-width: 390px) {
+
+  .escenario {
+    grid-template-rows: 23% minmax(0, 77%);
+  }
+
+  .polaroid {
+    width: 48%;
+    height: 110%;
+  }
+
+  .contenido-carta h1 {
+    font-size: 30px;
+  }
+
+  .pagina .mensaje {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .pagina {
+    gap: 5px;
+  }
+
+  .contenido-carta .firma {
+    font-size: 20px;
+  }
+
+  .rosa,
+  .sobre {
+    display: none;
+  }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/* ==========================================
+   MEJORAS DE LEGIBILIDAD DE LA CARTA
+========================================== */
+
+/* Carta un poco más amplia */
+.escenario {
+  width: min(1550px, 97%);
+  height: 92%;
+  grid-template-columns: 32% minmax(0, 68%);
+}
+
+.carta {
+  height: 98%;
+}
+
+/* Mayor espacio para el contenido */
+.contenido-carta {
+  width: 90%;
+  height: 96%;
+  max-height: 96%;
+}
+
+/* Título equilibrado */
+.contenido-carta h1 {
+  font-size: clamp(38px, 4vw, 62px);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+/* Menos espacio ocupado por adornos */
+.contenido-carta .divisor {
+  margin: 4px auto 9px;
+}
+
+/* TEXTO PRINCIPAL MÁS GRANDE */
+.pagina .mensaje {
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.55;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+/* Separación entre párrafos */
+.pagina {
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Controles */
+.controles-carta {
+  padding-top: 8px;
+}
+
+.indicador {
+  font-size: 14px;
+}
+
+/* Firma */
+.contenido-carta .firma {
+  font-size: clamp(26px, 2.3vw, 36px);
+  margin-top: 4px;
+}
+
+/* ==========================================
+   PORTÁTILES Y PANTALLAS MEDIANAS
+========================================== */
+
+@media (max-width: 1366px) and (min-width: 701px) {
+  .pagina .mensaje {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .pagina {
+    gap: 9px;
+  }
+
+  .contenido-carta h1 {
+    font-size: clamp(36px, 3.8vw, 54px);
+  }
+}
+
+/* ==========================================
+   PANTALLAS DE POCA ALTURA
+========================================== */
+
+@media (max-height: 700px) and (min-width: 701px) {
+  .pagina .mensaje {
+    font-size: 15px;
+    line-height: 1.38;
+  }
+
+  .pagina {
+    gap: 6px;
+  }
+
+  .contenido-carta h1 {
+    font-size: 38px;
+  }
+
+  .contenido-carta .divisor {
+    margin: 2px auto 5px;
+  }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 700px) {
+  .escenario {
+    width: 96%;
+    height: 96%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 22% minmax(0, 78%);
+  }
+
+  .contenido-carta {
+    width: 90%;
+    height: 97%;
+    max-height: 97%;
+  }
+
+  .contenido-carta h1 {
+    font-size: clamp(31px, 7vw, 45px);
+  }
+
+  .pagina .mensaje {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .pagina {
+    gap: 7px;
+  }
+
+  .contenido-carta .firma {
+    font-size: 23px;
+  }
+}

@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nuestra Galería | Eternelle</title>
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/galeria.css">
+</head>
+
+<body>
+
+  <!-- ICONOS SVG -->
+  <svg class="svg-defs" aria-hidden="true">
+    <symbol id="corazon" viewBox="0 0 24 24">
+      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
+    </symbol>
+  </svg>
+
+  <!-- NAVEGACIÓN -->
+  <header class="cabecera">
+
+    <a href="login.html" class="logo">
+      <svg viewBox="0 0 24 24">
+        <use href="#corazon"/>
+      </svg>
+
+      <span>Eter<span class="rojo">nelle</span></span>
+    </a>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+
+      <a href="login.html">
+        Inicio
+      </a>
+
+      <a href="historia.html">
+        Nuestra Historia
+      </a>
+
+      <a href="galeria.html" class="activo" aria-current="page">
+        Galería
+      </a>
+
+      <a href="razones.html">
+        Razones
+      </a>
+
+    </nav>
+
+    <svg class="corazon-cabecera" viewBox="0 0 24 24">
+      <use href="#corazon"/>
+    </svg>
+
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+
+    <!-- CORAZONES DECORATIVOS -->
+    <div class="decoracion corazon-1">♥</div>
+    <div class="decoracion corazon-2">♥</div>
+    <div class="decoracion corazon-3">♥</div>
+    <div class="decoracion corazon-4">♥</div>
+
+    <!-- PORTADA -->
+    <section class="portada">
+
+      <div class="titulo-contenedor">
+
+        <svg class="icono-galeria"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <path d="M21 16l-5-5-8 8"/>
+        </svg>
+
+        <h1>
+          Nuestra <span>Galería</span>
+        </h1>
+
+        <span class="corazon-titulo">♡</span>
+
+      </div>
+
+      <p class="subtitulo">
+        Un espacio para revivir nuestros momentos más especiales.
+      </p>
+
+      <div class="divisor">
+        <span></span>
+        <svg viewBox="0 0 24 24">
+          <use href="#corazon"/>
+        </svg>
+        <span></span>
+      </div>
+
+    </section>
+
+    <!-- GALERÍA DE FOTOGRAFÍAS -->
+    <section class="galeria" aria-label="Nuestros recuerdos">
+
+      <!-- IMAGEN 1 -->
+      <button class="foto" type="button"
+              data-titulo="Nuestro primer encuentro"
+              aria-label="Ampliar nuestro primer encuentro">
+
+        <img src="../imagenes/primero.png"
+             alt="Nuestra primera conversación por Instagram">
+
+        <span class="foto-info">
+          <span>Nuestro primer encuentro</span>
+          <small>Donde todo comenzó ♡</small>
+        </span>
+
+      </button>
+
+      <!-- IMAGEN 2 -->
+      <button class="foto" type="button"
+              data-titulo="Nuestro primer almuerzo"
+              aria-label="Ampliar nuestro primer almuerzo">
+
+        <img src="../imagenes/almuerzo.png"
+             alt="Nuestro primer almuerzo juntos">
+
+        <span class="foto-info">
+          <span>Nuestro primer almuerzo</span>
+          <small>Un recuerdo especial ♡</small>
+        </span>
+
+      </button>
+
+      <!-- IMAGEN 3 -->
+      <button class="foto" type="button"
+              data-titulo="Volver a encontrarnos"
+              aria-label="Ampliar nuestro reencuentro">
+
+        <img src="../imagenes//Galeria/juntos.jpeg"
+             alt="Nuestro reencuentro en la camioneta">
+
+        <span class="foto-info">
+          <span>Volver a encontrarnos</span>
+          <small>Como si el tiempo no hubiera pasado ♡</small>
+        </span>
+
+      </button>
+
+      <!-- IMAGEN 4 -->
+      <button class="foto" type="button"
+              data-titulo="Un regalo inolvidable"
+              aria-label="Ampliar el regalo de cumpleaños">
+
+        <img src="../imagenes/Galeria/regalo1.jpeg"
+             alt="Mi regalo de cumpleaños">
+
+        <span class="foto-info">
+          <span>Un regalo inolvidable</span>
+          <small>Un detalle lleno de cariño ♡</small>
+        </span>
+
+      </button>
+
+      <!-- IMAGEN 5 -->
+      <button class="foto" type="button"
+              data-titulo="Nuestra noche de cine"
+              aria-label="Ampliar nuestra noche de cine">
+
+        <img src="../imagenes/Galeria/cine1.jpeg"
+             alt="Nuestra noche de cine">
+
+        <span class="foto-info">
+          <span>Nuestra noche de cine</span>
+          <small>Una noche que cambió todo ♡</small>
+        </span>
+
+      </button>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+      <p>
+        Cada recuerdo contigo tiene un lugar especial en mi corazón
+        <span>♡</span>
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- VISOR DE IMÁGENES -->
+  <div class="visor" id="visor"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Fotografía ampliada"
+       aria-hidden="true">
+
+    <button class="cerrar-visor"
+            id="cerrarVisor"
+            type="button"
+            aria-label="Cerrar imagen">
+      ×
+    </button>
+
+    <img id="imagenAmpliada" src="" alt="">
+
+    <p id="tituloAmpliado"></p>
+
+  </div>
+
+  <!-- FUNCIONALIDAD -->
+  <script>
+    const fotos = document.querySelectorAll(".foto");
+    const visor = document.getElementById("visor");
+    const imagenAmpliada = document.getElementById("imagenAmpliada");
+    const tituloAmpliado = document.getElementById("tituloAmpliado");
+    const cerrarVisor = document.getElementById("cerrarVisor");
+
+    let fotoAnterior = null;
+
+    fotos.forEach(foto => {
+      foto.addEventListener("click", () => {
+
+        const imagen = foto.querySelector("img");
+
+        fotoAnterior = foto;
+        imagenAmpliada.src = imagen.src;
+        imagenAmpliada.alt = imagen.alt;
+        tituloAmpliado.textContent = foto.dataset.titulo;
+
+        visor.classList.add("visible");
+        visor.setAttribute("aria-hidden", "false");
+        cerrarVisor.focus();
+
+      });
+    });
+
+    function cerrarImagen() {
+      visor.classList.remove("visible");
+      visor.setAttribute("aria-hidden", "true");
+      imagenAmpliada.removeAttribute("src");
+
+      if (fotoAnterior) {
+        fotoAnterior.focus();
+      }
+    }
+
+    cerrarVisor.addEventListener("click", cerrarImagen);
+
+    visor.addEventListener("click", (evento) => {
+      if (evento.target === visor) {
+        cerrarImagen();
+      }
+    });
+
+    document.addEventListener("keydown", (evento) => {
+      if (evento.key === "Escape" &&
+          visor.classList.contains("visible")) {
+        cerrarImagen();
+      }
+
+      if (evento.key === "Tab" &&
+          visor.classList.contains("visible")) {
+        evento.preventDefault();
+        cerrarVisor.focus();
+      }
+    });
+  </script>
+
+</body>
+</html>
